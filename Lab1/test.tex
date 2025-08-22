@@ -1,0 +1,94 @@
+\documentclass[a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx} % Required for inserting images
+\usepackage[italian]{babel}
+\usepackage{gensymb}
+\usepackage{array}
+\usepackage{amsmath}
+\usepackage{hyperref}
+\usepackage{siunitx}
+\usepackage{caption}
+\usepackage{systeme}
+\usepackage{listings}
+\usepackage{color}
+
+\definecolor{dkgreen}{rgb}{0.2,0.48,0.32}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{
+  basicstyle={\small\ttfamily},        % the size of the fonts that are used for the code
+  breakatwhitespace=false,         % sets if automatic breaks should only happen at whitespace
+  breaklines=false,                 % sets automatic line breaking
+  captionpos=b,                    % sets the caption-position to bottom
+  commentstyle=\color{dkgreen},    % comment style
+  extendedchars=true,              % lets you use non-ASCII characters; for 8-bits encodings only, does not work with UTF-8
+  keepspaces=true,                 % keeps spaces in text, useful for keeping indentation of code (possibly needs columns=flexible)
+  keywordstyle=\color{blue},       % keyword style
+  language=[95]Fortran,                 % the language of the code
+  numbers=left,                    % where to put the line-numbers; possible values are (none, left, right)
+  numbersep=5pt,                   % how far the line-numbers are from the code
+  numberstyle=\tiny\color{gray}, % the style that is used for the line-numbers
+  rulecolor=\color{black},         % if not set, the frame-color may be changed on line-breaks within not-black text (e.g. comments (green here))
+  showspaces=false,                % show spaces everywhere adding particular underscores; it overrides 'showstringspaces'
+  showstringspaces=false,          % underline spaces within strings only
+  showtabs=false,                  % show tabs within strings adding particular underscores
+  stepnumber=1,                    % the step between two line-numbers. If it's 1, each line will be numbered
+  stringstyle=\color{mauve},     % string literal style
+  tabsize=4,                       % sets default tabsize to 2 spaces
+  title=\lstname                   % show the filename of files
+}
+
+\begin{document}
+\begin{lstlisting}[firstnumber=1]
+  program harm
+ implicit none
+! Grafico fatto con dt=0.01, n.step = 10000, massa = 4, kappa = 7, pos(0)/0, vel(0) = 1
+
+
+ real    :: massa=1.0,kappa=1.0 ! valori di default per massa e cost. elastica
+ real    :: dt,ekin,epot
+ real    :: pos,vel,vel_parziale,f, omega, pos0, vel0, pos_analitica, velocita
+ integer :: nstep,it
+ write(unit=*,fmt="(a)",advance="no")"delta t : "   ! il formato (a) chiede che il dato sia trattato come
+ read*,dt                                           ! caratteri e advance="no"  sopprime il
+ write(unit=*,fmt="(a)",advance="no")"n.step: "     ! carattere "a capo"  alla fine della linea per cui
+ read*,nstep                                        ! la prossima operazione di lettura/scrittura inzia
+ write(unit=*,fmt="(a)",advance="no")"massa: "      ! sulla stessa riga di schermo di quella corrente
+ read*,massa
+ write(unit=*,fmt="(a)",advance="no")"kappa: "
+ read*,kappa
+ write(unit=*,fmt="(a)",advance="no")"pos(0): "
+ read*,pos
+ write(unit=*,fmt="(a)",advance="no")"vel(0): "
+ read*,vel
+pos0=pos
+vel0=vel
+omega=sqrt(kappa/massa)
+
+ it=0        ! step 0 : valori iniziali
+
+ write(unit=1,fmt=*)it,it*dt,pos,vel
+ epot =  0.5 * kappa * pos**2
+ f    = - kappa * pos
+ ekin =  0.5 * massa * vel**2
+ write(unit=2,fmt=*)it,dt*it,ekin,epot,ekin+epot
+
+ do it = 1,nstep
+    pos = pos + vel * dt + 0.5* f/massa * dt**2
+    vel_parziale = vel + 0.5 * dt * f/massa         !  prima parte della formula per le velocita'
+    f    = - kappa * pos
+    epot =  0.5 * kappa * pos**2
+    vel = vel_parziale + 0.5 * dt * f/massa         !  la formula per le velocita' viene completata qui
+    pos_analitica=pos0*cos(omega*it*dt)+(vel0/omega)*sin(omega*it*dt)
+    velocita = -omega*pos0*sin(omega*it*dt)+vel0*cos(omega*it*dt)
+    write(unit=1,fmt=*)it,it*dt,pos,vel, pos_analitica, velocita
+    ekin = 0.5 * massa * vel**2
+    write(unit=2,fmt=*)it,it*dt,ekin,epot,ekin+epot
+    write(unit=3, fmt=*) pos, pos_analitica, abs(pos-pos_analitica), vel, velocita, abs(velocita-vel) !scrive posizione, posizione aalitica, differenza tra i due, velocita formula, velocita analitica, differenza tra i due
+
+ end do
+ end program harm
+
+\end{lstlisting}
+\end{document}

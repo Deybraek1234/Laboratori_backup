@@ -1,0 +1,495 @@
+\documentclass[a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx} % Required for inserting images
+\usepackage[italian]{babel}
+\usepackage{systeme}
+\usepackage{gensymb}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{siunitx}
+\usepackage[hidelinks]{hyperref}
+\usepackage{caption}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{placeins}
+
+\author{Francesco Giuliano Rossi, 2001973}
+\date{Giugno 2025}
+\title{Esame di Laboratorio di Calcolo}
+\hfuzz=2000pt
+
+\definecolor{dkgreen}{rgb}{0.2,0.48,0.32}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{
+  basicstyle={\footnotesize\ttfamily},        % the size of the fonts that are used for the code
+  breakatwhitespace=false,         % sets if automatic breaks should only happen at whitespace
+  breaklines=true,                 % sets automatic line breaking
+  captionpos=b,                    % sets the caption-position to bottom
+  commentstyle=\color{dkgreen},    % comment style
+  extendedchars=true,              % lets you use non-ASCII characters; for 8-bits encodings only, does not work with UTF-8
+  keepspaces=true,                 % keeps spaces in text, useful for keeping indentation of code (possibly needs columns=flexible)
+  keywordstyle=\color{blue},       % keyword style
+  language=[95]Fortran,                 % the language of the code
+  numbers=left,                    % where to put the line-numbers; possible values are (none, left, right)
+  numbersep=5pt,                   % how far the line-numbers are from the code
+  numberstyle=\tiny\color{gray}, % the style that is used for the line-numbers
+  rulecolor=\color{black},         % if not set, the frame-color may be changed on line-breaks within not-black text (e.g. comments (green here))
+  showspaces=false,                % show spaces everywhere adding particular underscores; it overrides 'showstringspaces'
+  showstringspaces=false,          % underline spaces within strings only
+  showtabs=false,                  % show tabs within strings adding particular underscores
+  stepnumber=1,                    % the step between two line-numbers. If it's 1, each line will be numbered
+  stringstyle=\color{mauve},     % string literal style
+  tabsize=4,                       % sets default tabsize to 2 spaces
+  title=\lstname,                   % show the filename of files
+  frame=single,
+  backgroundcolor=\color{yellow!10}
+}
+
+\begin{document}
+\maketitle
+\tableofcontents
+
+\abstract
+In questa relazione rapporterò i passaggi adottati per affrontare il problema di esame di laboratorio di calcolo. L'obiettivo del programma realizzato è di calcolare la derivata di tre funzioni in tre punti diversi usando formule diverse e valutare la precisione di ciascun metodo. 
+
+\section{Traccia d'Esame}
+La traccia ricevuta è la seguente
+
+\noindent\rule{\linewidth}{0.5pt}
+La formula per la derivata prima usando le differenze simmetriche (vedi formula ii più avanti) comporta un errore di discretizzazione proporzionale a $h^2$. Si può  trovare una formula migliore costruendo quella combinazione lineare delle formule alle differenze simmetriche d'incremento  $h$  e $2h$  che consenta di annullare il termine dominante dell' errore.
+Ricavare la formula ed implementarla, confrontando i risultati con
+quelli delle formule:
+
+i)  $f'(x) = \frac{f(x+h) - f(x)}{h}$    [errore O(h)]
+
+ii) $f'(x) = \frac{f(x+h) - f(x-h) }{2h}$  [errore $O(h^2) = \frac{1}{6} f'''(x)h^2 + O(h^4)$  (differenze simmetriche)]
+
+\noindent{Usarlo per valutare, per tre funzioni diverse (a sua scelta) e in tre punti diversi ciascuna, la accuratezza  delle due formule con particolare riferimento a problemi di precisione numerica e discutere la scelta del valore ottimale per $h$.}
+\par\noindent\rule{\linewidth}{0.5pt}
+
+\section{Discussione sulla Formula}
+\subsection{Derivazione della Formula}
+La consegna richiede di trovare una formula per calcolare la derivata più accurata di quelle date costruendo una combinazione lineare a partire dalla seconda equazione, usando incrementi di $h$ e $2h$. La prima formula data è conosciuta come 'forward differencing' dato che si usa un termine $x+h$ leggermente maggiore di $x$, mentre si può ottenere lo stesso risultato usando la cosiddetta 'backward differencing', nel quale si prende un termine $x-h$, leggermente inferiore di $x$. Scritto in formule, questi sono:
+\begin{gather*}
+    f'(x) = \frac{f(x+h)-{f(x)}}{h} \; \; \; \text{Forward Differencing}\\
+    f'(x) = \frac{f(x)-f(x-h)}{h}   \; \; \; \text{Backward Differencing}
+\end{gather*}
+In questa consegna verranno usati entrambi i metodi, ma il focus sarà principalmente sul metodo del 'forward differencing'. Tuttavia questa formula è esatta solo per equazioni lineari, per equazioni non lineari questa solo approssima il valore della derivata in tale punto. Per questo dobbiamo tenere in conto un termine d'errore dato. L'equazione di prima quindi diventa 
+\begin{equation*}
+    f'(x) = \frac{f(x+h)-f(x)}{h}-\frac{h}{2}f''(\xi), \; \; \; \xi \in (x,x+h)
+\end{equation*}
+Questo secondo termine che abbiamo introdotto rappresenta l'errore che facciamo quando non consideriamo questo piccolo valore, e quindi viene chiamato errore di troncamento. Per $h \rightarrow 0$, l'errore di troncamento dovrebbe scendere e l'approssimazione sarà ben migliore. Questo errore viene spesso rappresentato attraverso la notazione $O(h^n)$. Questa formula ha errore $O(h)$, ovvero dipende semplicemente dal valore di $h$, rendendola non molto accurata per $h$ relativamente grandi. Inoltre, per il fatto che siamo obbligati a scegliere un valore di $h$ molto piccolo, l'errore di arrotondamento diventa molto elevata.
+
+\noindent{La seconda formula, chiamata anche formula della differenza simmetrica, usa i punti $f(x+h)$ e $f(x-h)$ per rendere l'approssimazione migliore. 
+Espandendo questi termini in serie di Taylor, si ottiene un approssimazione della formula di
+\begin{equation*}
+        f'(x) \approx \frac{f(x+h)-f(x-h)}{2h} - \frac{h^2}{6}f'''(\xi)
+\end{equation*}
+\noindent{Quindi per questa formula l'errore risulta dell'ordine di $O(h^2)$. Questo vuol dire che convergerà molto più rapidamente del primo metodo. Inoltre, essendo non obbligati a scegliere $h$ tanto piccolo quanto per il primo metodo, si può ottenere una precisione maggiore visto che l'errore di arrotondamento nelle operazioni sarà minore.}
+Ora cominciamo a cercare la 'formula migliore'. Questo si fa cercando una combinazione lineare della seconda formula usando $h$ e $2h$. Quindi posti
+\begin{gather*}
+    C_1 = \frac{f(x+h)-f(x-h)}{h}-\frac{h^2}{6}f''(\xi) \\
+    C_2 = \frac{f(x+2h)-f(x-2h)}{2h} - \frac{2h^2}{3}f'''(\xi)
+\end{gather*}
+e per definizione di combinazione lineare, possiamo scrivere per $A,B \in \mathbb{R}$
+\begin{equation*}
+    f'(x) = C = AC_1 + BC_2
+\end{equation*}
+Per trovare la 'formula migliore' vogliamo che il termine di $h^2$ si annulli, e che per semplicità il coefficiente di $f(x)$ è 1. Messi in sistema
+\begin{equation*}
+    \systeme*{
+    \frac{A}{6}+\frac{2}{3}B = 0, 
+    A+B=1
+    }
+\end{equation*}
+e risolvendo si ottiene che $A = \frac{4}{3}$ e $B=-\frac{1}{3}$ e così otteniamo la formula
+\begin{equation*}
+    f'(x) = \frac{8(f(x+h)-f(x-h)) - (f(x+2h)+f(x-2h))}{12h} + \frac{h^4}{30}f^{(5)}(\xi)
+\end{equation*}
+il che avrà errore $O(h^4)$ e quindi convergerà molto più velocemente degli altri metodi essendo che l'errore di troncamento sarà molto minore, e quindi la formula in sé più accurata. Inoltre, a causa del fatto che si può scegliere $h$ più grande, ci sarà un effetto dell'errore di arrotondamento minore. Questo metodo si chiama 'L'Estrapolazione di Richardson'. 
+
+\noindent{L'errore di troncamento non è l'unica fonte di errore. C'è anche l'errore di arrotondamento da tenere in considerazione che viene dal come i computer gestiscono le operazioni tra valori che possono avere una grande differenza tra di loro. Per quando $h \rightarrow 0$ stiamo manipolando numeri con grandi differenze, alcune volte con differenze così grandi che il computer non può tenerle in conto. Per questo per $h \rightarrow 0$ l'errore diventa più grande e non possiamo direttamente prendere un $h$ molto piccolo.}
+
+\section{Implementazione}
+Le tre funzioni scelte sono 
+\begin{gather*}
+  f_1(x) = (x^4-2x^2+5)(\sin(x))^2+x^3\sin(x) \\
+  f_2(x) = 3\cos(2x)+5x \\
+  f_3(x) = 4\log_{10}(x)+\frac{1}{x^2+1}
+\end{gather*}
+In questo modo si può studiare il carattere di una funzione polinomiale dispari con funzione seno, una funzione cosinusoidale pari e una funzione logaritmica non banale (la base 10 è stata scelta perché è più facile da calcolare al livello computazionale che il logaritmo in base naturale.) 
+
+\noindent{Queste funzioni sono state messe in un module chiamato 'funzioni' e ciascuna è stata definita con un procedure del tipo function.}
+\begin{lstlisting}[firstnumber=2]
+module funzioni
+implicit none
+integer, parameter ::rk = SELECTED_REAL_KIND(3)
+real, parameter ::pi = 4*atan(1.d0)
+
+contains
+function f1(x) result(res)
+    real(kind=rk)::x,res
+    res = (x**4-2*x**2+5)*(sin(x))**2+x**3*sin(x) !funzione pari con seno
+end function
+
+function f2(x) result(res)
+    real(kind=rk)::x, res
+    res = 3*cos(2*(x))+5*(x) !funzione dispari con coseno
+end function
+
+function f3(x) result(res)
+    real(kind=rk)::x, res
+    res = 4*log10(x)+1/(1+x**2) !funzione logaritmica
+end function
+end module
+\end{lstlisting}
+
+\noindent{I tre punti scelti sono} 
+\begin{center}
+\begin{lstlisting}[firstnumber=214]
+    x = [2.34654, 7.36143, 50.0, &
+         pi, 8.8, 7.5, &
+        -pi,-8.8, 0.01]
+\end{lstlisting}
+\end{center}
+Questi numeri sono stati pensati tenendo in mente il carattere pari o dispari della funzione. La prima colonna di questa 'matrice' (in realtà un array a rango 1, di dimensione 9), rappresenta i punti provati sulla prima funzione. Inoltre, i primi numeri delle prime due 'colonne' sono i valori dove la funzione si dovrebbe annullare (o approssimano al meglio possibile). 
+
+\noindent{Per calcolare la derivata nel punto, si crea una subroutine che usa le equazioni trovate nella sezione prima e le formule nel modulo 'funzioni' per calcolare la derivata usando ciascun metodo. Il codice è come segue}
+\begin{lstlisting}[firstnumber = 105]
+module derivate
+use funzioni
+use err_check
+implicit none
+
+contains 
+subroutine df1(x, h, derivvalue, counter)
+    real(kind=rk),intent(in)::x,h, derivvalue
+    integer, intent(in)::counter
+    real(kind=rk):: deriv1, deriv2, deriv3, err1, err2, err3, deriv4, min_err
+    character(len=11)::metodo
+
+    !calcolo della derivata con i tre metodi
+    deriv1 = (f1(x+h)-f1(x))/h
+    deriv4 = (f1(x)-f1(x-h))/h
+    deriv2 = (f1(x+h)-f1(x-h))/(2*h)
+    deriv3 = (8*(f1(x+h)-f1(x-h))-(f1(x+2*h)-f1(x-2*h)))/(12*h)
+
+    !calcolo dell'errore assoluto
+    err1 = deriv1 - derivvalue
+    err2 = deriv2 - derivvalue
+    err3 = deriv3 - derivvalue
+
+    min_err = min(abs(err1), abs(err2), abs(err3))
+
+    if(min_err == abs(err1)) then
+        metodo = 'Incremento'
+    else if(min_err == abs(err2)) then
+        metodo = 'Simmetrica'
+    else if(min_err == abs(err3)) then
+        metodo = 'Richardson'
+    end if
+    
+    call err_checker(min_err, h, counter, metodo)
+    !scrittura di tutto su un file di testo distinto per ogni punto
+    !sono commentati cosi` non generano 40Gb di file
+    !write(unit=counter, fmt=*) h, x, deriv1, deriv2, deriv3, deriv4, &
+    err1, err2, err3
+end subroutine
+\end{lstlisting}
+Due altre subroutine identiche sono state create per valutare un qualsiasi punto per le altre due funzioni. Sono state suddivise per poter facilmente differenziare tra le tre funzioni scelte. Questa subroutine, dopo aver eseguito i calcoli, calcola l'errore (calcolato a mano e inserita nell'array chiamato 'derivvalue' noto e passato alla subroutine con la variabile derivvalue) e lo scrive su un file 'fort.counter' dove 'counter' rappresenta un numero unico passato alla subroutine che dipende dal punto preso in considerazione, come si può vedere più avanti. In questo modo si separano i risultati di ogni punto per fare un'analisi dati più approfondita. I comandi di write sono stati commentati tutti a parte il file 'fort.20', visto che il focus di questo programma è di trovare il valore ottimale di $h$. \\
+Prima di scrivere sul file, la subroutine verifica quale degli errori è il più vicino allo zero attraverso la funzione intrinseca 'min()'. In base a quale metodo è più accurato, i dati vengono passati alla subroutine 'err\_checker'. Il codice per questa subroutine è:
+\begin{lstlisting}[firstnumber = 24]
+module err_check
+use funzioni
+implicit none
+
+real(kind=rk), dimension(9), save::min_err_fp=1000
+real(kind=rk), dimension(9), save::h_optimal_fp=0.0
+character(len=11), dimension(9), save::metodo_migliore_fp
+
+contains
+subroutine err_checker(min_err, h, counter, metodo)
+    real(kind=rk), intent(in):: min_err, h
+    integer, intent(in)::counter
+    character(len=11)::metodo
+    !per associare ad un elemento dell'array 'min_err_fp' a partire dal counter
+    integer::id
+
+    id = counter-9
+    !check per vedere se l'errore e' minore di quello globale si usa il valore di
+    !id per prendere il valore minimo corrispondente al counter e verificare se 
+    !l'errore calcolato da quella iterazione do e' minore di quello globale salvato
+    select case (counter)
+    case(10)
+        if (min_err<min_err_fp(id)) then
+            min_err_fp(id) = min_err
+            h_optimal_fp(id) = h
+            metodo_migliore_fp(id)=metodo
+        end if
+    case(11)
+        if (min_err<min_err_fp(id)) then
+            min_err_fp(id) = min_err
+            h_optimal_fp(id) = h
+            metodo_migliore_fp(id)=metodo
+        end if
+    case(12) 
+        if (min_err<min_err_fp(id)) then
+            min_err_fp(id) = min_err
+            h_optimal_fp(id) = h
+            metodo_migliore_fp(id)=metodo
+        end if
+    case(13) 
+        if (min_err<min_err_fp(id)) then
+            min_err_fp(id) = min_err
+            h_optimal_fp(id) = h
+            metodo_migliore_fp(id)=metodo
+        end if
+    case(14) 
+        if (min_err<min_err_fp(id)) then
+            min_err_fp(id) = min_err
+            h_optimal_fp(id) = h
+            metodo_migliore_fp(id)=metodo
+        end if
+    case(15) 
+        if (min_err<min_err_fp(id)) then
+            min_err_fp(id) = min_err
+            h_optimal_fp(id) = h
+            metodo_migliore_fp(id)=metodo
+        end if
+    case(16) 
+        if (min_err<min_err_fp(id)) then
+            min_err_fp(id) = min_err
+            h_optimal_fp(id) = h
+            metodo_migliore_fp(id)=metodo
+        end if
+    case(17) 
+        if (min_err<min_err_fp(id)) then
+            min_err_fp(id) = min_err
+            h_optimal_fp(id) = h
+            metodo_migliore_fp(id)=metodo
+        end if
+    case(18) 
+        if (min_err<min_err_fp(id)) then
+            min_err_fp(id) = min_err
+            h_optimal_fp(id) = h
+            metodo_migliore_fp(id)=metodo
+        end if
+    end select 
+end subroutine
+end module
+\end{lstlisting}
+Ho usato 'select case' per evitare l'uso di tanti if. Questo rende il programma più efficiente, perché usando select case, trova solo il caso nella quale la condizione è vera(in questo caso quanto counter è uguale ad un certo valore), invece di provare tutte le dichiarazioni if. Inoltre, gli array 'min\_err\_fp' e h\_optimal\_fp' sono state create per contenere i valori migliori. Hanno tutti l'attributo save cosi è sicuro che il loro valore persiste tra chiamate della subroutine. 
+
+\noindent{Per valutare la convergenza dei valori, ho usato un ciclo do che a ogni iterazione di i trova un corrispondente valore di h. In questo modo possiamo provare tanti h senza doverli inserire manualmente. Inoltre ho usato una variabile 'scale' per cambiare più velocemente quante iterazioni si facevano. Per tutta la relazione è stato usato un valore di $scale = 1E7$. Questo ciclo do si fa andare al contrario per partire da un numero di h grande (relativamente, si parte da un valore di $h=0.1$) e arrivare a uno più piccolo. In questo modo, provando tutti i valori di h, possiamo trovare qual'è quello ottimale.}
+\begin{lstlisting}[firstnumber = 205]
+do i = 1*scale, 1 ,-1
+    h=i*(0.1/scale)
+    call df1(x(1), h, derivvalue(1), 10) !cella 1,1, funzione 1
+    call df2(x(2), h, derivvalue(2), 11) !cella 1,2, funzione 2
+    call df3(x(3), h, derivvalue(3), 12) !cella 1,3, funzione 3
+
+    call df1(x(4), h, derivvalue(4), 13) !cella 2,1, funzione 1
+    call df2(x(5), h, derivvalue(5), 14) !cella 2,2, funzione 2
+    call df3(x(6), h, derivvalue(6), 15) !cella 2,3, funzione 3
+
+    call df1(x(7), h, derivvalue(7), 16) ! cella 3,1, funzione 1
+    call df2(x(8), h, derivvalue(8), 17) !cella 3,2 funzione 2
+    call df3(x(9), h, derivvalue(9), 18) !cella 3,3 funzione 3
+end do
+\end{lstlisting}
+
+\noindent{I valori di derivvalue sono stati calcolate separatamente dal programma, valutando le tre derivate nei punti specifici. Le derivate di ciascuna funzione risultano essere:}
+\begin{gather*}
+    f'_1(x)=x^3\cos(x)+3x^2\sin(x)+2(5-2x^2+x^4)\cos(x)\sin(x)+(-4x+4x^3)(\sin(x))^2 \\
+    f'_2(x)=5-6\sin(2x) \\
+    f'_3(x)=\frac{-2x}{(1+x^2)^2}+\frac{4}{x\ln(10)}
+\end{gather*}
+Queste sono state usate per calcolare i valori presente nell'array 'derivvalue' 
+\begin{lstlisting}[firstnumber=219]
+    derivvalue = [0.0, 0.00002492587, 0.03472757134, &
+                -31.0062766803, 10.69306698751, 0.22704715192, &
+                31.0062766803, -0.69306698751, 173.697796760]
+\end{lstlisting}
+
+\section{Risultati}
+\subsection{Tentativo 4 Decimali di Precisione}
+In questa sezione, parlerò del tentativo dove ho usato la funzione intrinseca SELECTED\_REAL\_KIND(4) per avere una precisione di 4 cifre decimali.
+\subsubsection{Convergenza delle Derivate}
+Durante l'esecuzione del programma, tolte il '!' davanti alle righe con un comando write, il programma genera nove file 'fort.10-fort.18', uno per ogni punto di ogni funzione. Questi file hanno rapportati i valori di: x, h, i valori delle derivate valutate usando ogni metodo, e quanto scosta dal valore atteso la derivata numerica. Da questi file, usando gnuplot sono stati generati dei grafici del valore della derivata un funzione di $h$. I grafici si trovano nella sezione \ref{deriv_graf_4}. Come possiamo vedere, usando il metodo del rapporto incrementale per le derivate, risulta non molto accurato per h relativamente grandi per tutti e tre le funzioni scelte, e anche rispetto agli altri due metodi per il calcolo della derivata, converge lentamente. Tuttavia questo non ci sorprende per il fatto che, come detto prima, l'errore per il metodo del rapporto incrementale è dell'ordine di $O(h)$ e quindi è molto sensibile a errori di troncamento. Gli altri due metodi per il calcolo delle derivate, invece, risultano essere più accurate fin da subito, anche se il metodo della differenza simmetrica soffre dello stesso problema del rapporto incrementale. Ovvero che per h relativamente grandi non è molto preciso ma poi man mano che h diminuisce converge più rapidamente. 
+
+\noindent{Inoltre è interessante vedere come per h molto piccoli (tendenzialmente dopo l'ordine del $10^{-3}$, $10^{-4}$), tutti e tre i metodi iniziano a dare valori apparentemente a caso. Come spiegato prima, questo è dovuto a errori di arrotondamento, il che può essere evitato specificando una maggior numero di numeri decimali di precisione con SELECTED\_REAL\_KIND.
+
+\noindent{Per vedere quanto è distante il valore della valore calcolata numericamente e la derivata analitica, ho inserito questo frammento di codice:}
+\begin{lstlisting}[firstnumber = 136]
+    err1 = deriv1 - derivvalue
+    err2 = deriv2 - derivvalue
+    err3 = deriv3 - derivvalue
+    err4 = deriv4 - derivvalue
+\end{lstlisting}
+dove derivvalue è il valore della derivata calcolata analiticamente e deriv1, deriv2, e deriv3, sono tutti e tre valori calcolati al momento dalla subroutine come mostrato prima. Il problema con questo metodo è che i valori analitici sono comunque soggetti ad errori di arrotondamento, non solo nel valore di deriv1, deriv2, deriv3, e deriv4, ma anche nel valore di derivvalue e dei risultati err1, err2, err3, e err4. 
+
+\subsection{Tentativo 33 Decimali di Precisione}
+In questa sezione, discuterò il tentativo fatto con la funzione intrinseca SELECTED\_REAL\_KIND(33), tenendo il numero di iterazioni uguali alla prima. Questo è stato fatto principalmente per curiosità personale per vedere come avrebbe influito i calcoli e l'errore di arrotondamento. 
+
+\subsubsection{Convergenza delle Derivate}
+Analizzando i grafici nella sezione \ref{deriv_graf_16} possiamo vedere, per $h$ che tende a valori sempre più piccoli vediamo chiaramente che il rapporto incrementale è il metodo che converge più lentamente di tutti. Il fatto che questo metodo non converge veloce quanto gli altri ha molto senso perché il suo errore principale non è errore di arrotondamento, ma di troncamento. Questo errore non cambierà in base al kind, è un errore innato e pertanto per $h$ grandi avrà sempre un errore grande. Inoltre, come ci aspettavamo, il metodo della differenza simmetrica converge più velocemente del rapporto incrementale ma meno veloce dell'estrapolazione di Richardson. Una cosa che mi ha sorpreso è come l'estrapolazione di Richardson converge quasi istantaneamente. Solo guardando con molta attenzione sono riuscito a vedere che per grandi valori di $h$, circa dell'ordine del $10^{-1}$, si vedeva leggermente una linea blu. Questa poi non si vede più a causa del fatto che l'errore è talmente piccolo che le due righe diventano uguali.
+
+\noindent{Un caso particolare che vorrei sottolineare è la terza funzione valutata nel terzo punto. Come si può notare dalla figura \ref{graf_strambo}, l'estrapolazione di Richardson inizia ad assumere valori solo per $h<0.01$. Ricordo che la funzione tre è la seguente}
+\begin{equation}
+    f_3(x) = 4\log_{10}(x)+\frac{1}{x^2+1}
+\end{equation}
+e inoltre ricordo che per calcolare le derivate, il metodo della differenza simmetrica ed estrapolazione di Richardson devono poter valutare la funzione in $f(x-h)$. Tuttavia il dominio del logaritmo è $(0,+\infty)$ e quindi quando il programma prova a valutare $f(x-h)$ con $x=0.01$ e $h>0.01$ la funzione restituisce NaN, e quindi la derivata in quel punto usando questo metodo non si può calcolare. Per questo nelle figure 9 e 18 solo il metodo del 'forward differencing' assume valori prima di $h=0.01$.
+
+\noindent{Per le altre funzioni e gli altri punti, è interessante vedere come i valori alla fine non 'esplodono' come per un kind più piccolo. Questo potrebbe essere causato dal fatto che stiamo prendendo valori di h così talmente piccoli che $x+h \approxeq x$. Questo, come effetto, fa venire valori identici per $f(x+h),f(x)$, e in tal modo la differenza tra i due valori viene nulla. Questo si chiama l'epsilon di macchina, e rappresenta il numero più basso che il computer può distinguere, senza che si verifichi una cancellazione di dati. Infatti, analizzando i file generati, per tanti i valori con h piccolo, il valore della derivata risulta zero. Questo rafforza ancora di più l'ipotesi proposta.}
+
+\subsection{Ottimizzazione di h}
+In questa sezione discuterò la scelta ottimale del valore di $h$. Ovviamente scegliendo un kind molto alto si può prendere un valore più piccolo di $h$, ma al costo di dimensioni del file e complessità computazionale. Dall'altra parte non possiamo scegliere un valore di $h$ troppo piccolo, sennò domina l'errore di troncamento. Per questo trovare il miglior valore di $h$ non è affatto facile. Usando il codice descritto in precedenza, ho trovato i valori ottimali di h per ogni funzione in ogni punto per un SELECTED\_REAL\_KIND(4) e il programma gli scrive su un file chiamato 'fort.20'. I risultati sono i seguenti:
+
+\begin{table}[!ht]
+\centering
+\begin{tabular}{|c|c|c|c|}
+\hline
+Funzione & Punto & Valore di h & Metodo \\
+\hline
+1 & 1 & \SI{2.84160301E-02}{} & Richardson \\
+1 & 2 & \SI{5.10084592E-02}{} & Richardson \\
+1 & 3 & \SI{9.99945179E-02}{} & Simmetrica \\
+2 & 1 & \SI{3.48216295E-02}{} & Richardson \\
+2 & 2 & \SI{8.04238319E-02}{} & Richardson \\
+2 & 3 & \SI{9.99978408E-02}{} & Richardson \\
+3 & 1 & \SI{3.48216295E-02}{} & Richardson \\
+3 & 2 & \SI{6.61301613E-02}{} & Richardson \\
+3 & 3 & \SI{5.15240012E-04}{} & Richardson \\
+\hline
+\end{tabular}
+\end{table}
+\FloatBarrier
+\noindent{Mentre i valori ottimali di $h$ per un SELECTED\_REAL\_KIND(33) sono:}
+\begin{table}[!ht]
+\centering
+\begin{tabular}{|c|c|c|c|}
+\hline
+Funzione & Punto & Valore di h & Metodo\\
+\hline
+1 & 1 & \SI{9.99999993922529029077850282192230225E-0009}{} & Richardson \\
+1 & 2 & \SI{9.99999993922529029077850282192230225E-0009}{} & Richardson \\
+1 & 3 & \SI{4.82999985251808539032936096191406250E-0006}{} & Incremento \\
+2 & 1 & \SI{9.99999993922529029077850282192230225E-0009}{} & Richardson \\
+2 & 2 & \SI{5.99999978589949023444205522537231445E-0008}{} & Richardson \\
+2 & 3 & \SI{4.49999987495175446383655071258544922E-0007}{} & Incremento \\
+3 & 1 & \SI{1.80000000682412064634263515472412109E-0007}{} & Incremento \\
+3 & 2 & \SI{4.00000004674438969232141971588134766E-0007}{} & Incremento \\
+3 & 3 & \SI{9.11899987841024994850158691406250000E-0005}{} & Richardson \\
+\hline
+\end{tabular}
+\end{table}
+\FloatBarrier
+\noindent{Come ci si aspettava, il valore ottimale di $h$ cambia in base al kind. Questo è dovuto ai tipi di errori che affliggono questi metodi per calcolare la derivata numericamente. Quando si aumenta il kind, si minimizza l'errore di troncamento aumentando il numero di cifre precise nel numero floating point, e quindi permette di valutare le funzioni con $h$ sempre più piccole e quindi con valori sempre più vicini a quelli analitici. Una cosa abbastanza inaspettata era che il metodo dell'estrapolazione di Richardson non era sempre il metodo più accurato. Tuttavia, potrebbe essere che il metodo del rapporto incrementale, per alcuni valori di h, dia un valore più accurato, ma in media l'estrapolazione di Richardson era più accurata. Infatti, con un kind più basso questo metodo risulta quasi sempre il più preciso.}
+
+\section{Conclusione}
+La maggior difficoltà incontrata è stata nel come implementare tutte le chiamate alle subroutine. Essendo che si dovevano valutare tre funzioni diverse in tre punti diverse, pensavo all'inizio che una subroutine bastasse, ma in quel modo differenziare tra quale delle tre funzioni valutare era impossibile. Condensare tutto in solo una subroutine avrebbe reso il codice più pulito e forse anche più efficiente.
+
+\newpage
+\section{Grafici}
+\subsection{Tentativo 4 Decimali di Precisione}
+Tutti questi grafici vanno letti da destra verso sinistra. I valori di h grandi si trovano a destra mentre i valori piccoli di h sono a sinistra. In questi prossimi grafici si potrà vedere la convergenza dei metodi al variare di h. 
+\subsubsection{Convergenza della Derivata}\label{deriv_graf_4}
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width=\textwidth]{immagini/kind=4/derivate/p1f1.png}
+    \caption{Punto 1, Funzione 1}
+\end{figure}
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width=\textwidth]{immagini/kind=4/derivate/p1f2.png}
+    \caption{Punto 1, Funzione 2}
+\end{figure}
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width=\textwidth]{immagini/kind=4/derivate/p1f3.png}
+    \caption{Punto 1, Funzione 3}
+\end{figure}
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width=\textwidth]{immagini/kind=4/derivate/p2f1.png}
+    \caption{Punto 2, Funzione 1}
+\end{figure}
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width=\textwidth]{immagini/kind=4/derivate/p2f2.png}
+    \caption{Punto 2, Funzione 2}
+\end{figure}
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width=\textwidth]{immagini/kind=4/derivate/p2f3.png}
+    \caption{Punto 2, Funzione 3}
+\end{figure}
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width=\textwidth]{immagini/kind=4/derivate/p3f1.png}
+    \caption{Punto 3, Funzione 1}
+\end{figure}
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width=\textwidth]{immagini/kind=4/derivate/p3f2.png}
+    \caption{Punto 3, Funzione 2}
+\end{figure}
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width=\textwidth]{immagini/kind=4/derivate/p3f3.png}
+    \caption{Punto 3, Funzione 3}
+\end{figure}
+\FloatBarrier
+
+\subsection{Tentativi 33 Decimali di Precisione}
+Tutti questi grafici vanno letto da sinistra verso destra. I valori di h grandi si trovano a destra mentre i valori piccoli di h sono a sinistra. In questi prossimi grafici si potrà vedere la convergenza dei metodi al variare di h. 
+\subsubsection{Convergenza Derivate} \label{deriv_graf_16}
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width=\textwidth]{immagini/kind/derivate/p1f1.png}
+    \caption{Punto 1, Funzione 1}
+\end{figure}
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width=\textwidth]{immagini/kind/derivate/p1f2.png}
+    \caption{Punto 1, Funzione 2}
+\end{figure}
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width=\textwidth]{immagini/kind/derivate/p1f3.png}
+    \caption{Punto 1, Funzione 3}
+\end{figure}
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width=\textwidth]{immagini/kind/derivate/p2f1.png}
+    \caption{Punto 2, Funzione 1}
+\end{figure}
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width=\textwidth]{immagini/kind/derivate/p2f2.png}
+    \caption{Punto 2, Funzione 2}
+\end{figure}
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width=\textwidth]{immagini/kind/derivate/p2f3.png}
+    \caption{Punto 2, Funzione 3}
+\end{figure}
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width=\textwidth]{immagini/kind/derivate/p3f1.png}
+    \caption{Punto 3, Funzione 1}
+\end{figure}
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width=\textwidth]{immagini/kind/derivate/p3f2.png}
+    \caption{Punto 3, Funzione 2}
+\end{figure}
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width=\textwidth]{immagini/kind/derivate/p3f3.png}
+    \caption{Punto 3, Funzione 3} \label{graf_strambo}
+\end{figure}
+\FloatBarrier
+\end{document}

@@ -1,0 +1,18 @@
+\babel@toc {italian}{}\relax 
+\babel@toc {italian}{}\relax 
+\contentsline {section}{\numberline {1}Traccia d'Esame}{1}{section.1}%
+\contentsline {section}{\numberline {2}Discussione sulla Formula}{2}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Derivazione della Formula}{2}{subsection.2.1}%
+\contentsline {section}{\numberline {3}Implementazione}{3}{section.3}%
+\contentsline {section}{\numberline {4}Risultati}{8}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Tentativo 4 Decimali di Precisione}{8}{subsection.4.1}%
+\contentsline {subsubsection}{\numberline {4.1.1}Convergenza delle Derivate}{8}{subsubsection.4.1.1}%
+\contentsline {subsection}{\numberline {4.2}Tentativo 33 Decimali di Precisione}{9}{subsection.4.2}%
+\contentsline {subsubsection}{\numberline {4.2.1}Convergenza delle Derivate}{9}{subsubsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.3}Ottimizzazione di h}{9}{subsection.4.3}%
+\contentsline {section}{\numberline {5}Conclusione}{10}{section.5}%
+\contentsline {section}{\numberline {6}Grafici}{11}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Tentativo 4 Decimali di Precisione}{11}{subsection.6.1}%
+\contentsline {subsubsection}{\numberline {6.1.1}Convergenza della Derivata}{11}{subsubsection.6.1.1}%
+\contentsline {subsection}{\numberline {6.2}Tentativi 33 Decimali di Precisione}{16}{subsection.6.2}%
+\contentsline {subsubsection}{\numberline {6.2.1}Convergenza Derivate}{16}{subsubsection.6.2.1}%
