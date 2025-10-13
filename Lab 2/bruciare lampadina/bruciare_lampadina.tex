@@ -1,0 +1,40 @@
+\documentclass[a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{circuitikz}
+
+\begin{document}
+
+\section{Passaggi}
+\begin{enumerate}
+   \item preso una lampadina e calcolato resistenza necessaria con excel per vedere che resistenza scegliere per regolare il voltaggio
+   \item montato circuito
+   \item prese le misure aumentando di circa 0,3 A, poi di 0,5A dall'alimentatore
+   \item verificato il valore della resistenza
+   \item 
+\end{enumerate}
+
+misurato corrente perchè è misura diretta, invece di voltometro
+
+\begin{circuitikz}
+   \draw (0,0) to[ battery1, name=myB ] (0,2)
+   to [ resistor ] (4,2)
+   to [ full led ] (4,-1)
+   to [ ammeter, mirror ] (0,-1)
+   to (0,0)
+
+   (3,2) to [voltmeter] (3,-1)
+
+   (5,2) to [photodiode] (5,-1)
+   to (6,-1) 
+   to [voltmeter] (6,2)
+   to (5,2)
+   ;
+   \ctikztunablearrow{1}{1}{60}{myB}
+\end{circuitikz}
+
+add voltmeter
+
+è una connessione ottica, non è polarizzato. 
+
+\end{document}
