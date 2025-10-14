@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1760341033.39868 "/home/franci/Code/chimica/Lab 2/relazione_template.tex" "relazione_template.pdf" "relazione_template" 1760341033.76967 0
-  "/home/franci/Code/chimica/Lab 2/relazione_template.tex" 1760341033.14893 1018 f57587ca9eb21a458457984be81230b9 ""
+["pdflatex"] 1760453592.30425 "/home/franci/Code/Lab 2/bruciare lampadina/relazione_template.tex" "relazione_template.pdf" "relazione_template" 1760453592.69432 0
+  "/home/franci/Code/Lab 2/bruciare lampadina/relazione_template.tex" 1760453591.58005 1428 1b12b01471a7010c22c0a94f8c0336f2 ""
   "/usr/share/texmf-dist/fonts/map/fontname/texfonts.map" 1755987285 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm" 1755987285 1328 c834bbb027764024c09d3d2bf908b5f0 ""
   "/usr/share/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm" 1755987285 1324 c910af8c371558dc20f2d7822f66fe64 ""
@@ -24,7 +24,7 @@
   "/usr/share/texmf-dist/web2c/texmf.cnf" 1755987285 42087 b0f9697c952c8f5a8eede4134282cb0d ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1758727370 5311557 9da84c45f5b388655502706482323571 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1758727333 2008248 a5c76efaa6d853d1a966e093c497eb75 ""
-  "relazione_template.aux" 1760341033.72793 321 bd2abb0d4a8e339fc3bcd5c45b56ebe6 "pdflatex"
+  "relazione_template.aux" 1760453592.65305 417 3372cf6969896e6651bbe4fcb7889c98 "pdflatex"
   (generated)
   "relazione_template.aux"
   "relazione_template.log"

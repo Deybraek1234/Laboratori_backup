@@ -1,7 +1,7 @@
-PWD /home/franci/stow/laboratori/Code/chimica/Lab 2
+PWD /home/franci/stow/laboratori/Code/Lab 2/bruciare lampadina
 INPUT /usr/share/texmf-dist/web2c/texmf.cnf
 INPUT /var/lib/texmf/web2c/pdftex/pdflatex.fmt
-INPUT /home/franci/Code/chimica/Lab 2/relazione_template.tex
+INPUT /home/franci/Code/Lab 2/bruciare lampadina/relazione_template.tex
 OUTPUT relazione_template.log
 INPUT /usr/share/texmf-dist/tex/latex/base/article.cls
 INPUT /usr/share/texmf-dist/tex/latex/base/article.cls

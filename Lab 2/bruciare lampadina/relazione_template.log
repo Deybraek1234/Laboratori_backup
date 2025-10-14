@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2026/dev/Arch Linux) (preloaded format=pdflatex 2025.9.24)  13 OCT 2025 09:37
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2026/dev/Arch Linux) (preloaded format=pdflatex 2025.9.24)  14 OCT 2025 16:53
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**"/home/franci/Code/chimica/Lab 2/relazione_template.tex"
-(/home/franci/Code/chimica/Lab 2/relazione_template.tex
+**"/home/franci/Code/Lab 2/bruciare lampadina/relazione_template.tex"
+(/home/franci/Code/Lab 2/bruciare lampadina/relazione_template.tex
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
 (/usr/share/texmf-dist/tex/latex/base/article.cls
@@ -95,15 +95,15 @@ L3 programming layer <2025-01-18>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 1306 strings out of 475171
- 21443 string characters out of 5767095
- 407016 words of memory out of 5000000
- 24344 multiletter control sequences out of 15000+600000
+ 1307 strings out of 475171
+ 21484 string characters out of 5767095
+ 409016 words of memory out of 5000000
+ 24345 multiletter control sequences out of 15000+600000
  559750 words of font info for 39 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 57i,5n,65p,249b,142s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 57i,5n,65p,260b,142s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb>
-Output written on relazione_template.pdf (1 page, 42225 bytes).
+Output written on relazione_template.pdf (1 page, 43932 bytes).
 PDF statistics:
  23 PDF objects out of 1000 (max. 8388607)
  13 compressed objects within 1 object stream

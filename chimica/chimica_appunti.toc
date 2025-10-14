@@ -1,0 +1,35 @@
+\contentsline {section}{\numberline {1}Atomo}{3}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Definizioni di Base}{3}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Atomi}{3}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.3}Nuclidi}{4}{subsection.1.3}%
+\contentsline {subsection}{\numberline {1.4}Isotopi}{4}{subsection.1.4}%
+\contentsline {subsection}{\numberline {1.5}Tavola Periodica}{4}{subsection.1.5}%
+\contentsline {subsection}{\numberline {1.6}Massa Atomica}{5}{subsection.1.6}%
+\contentsline {subsection}{\numberline {1.7}Mole e Massa Molecolare}{6}{subsection.1.7}%
+\contentsline {subsection}{\numberline {1.8}Moderna Teoria Atomica}{6}{subsection.1.8}%
+\contentsline {subsubsection}{\numberline {1.8.1}Equazioni di De Broglie}{6}{subsubsection.1.8.1}%
+\contentsline {subsubsection}{\numberline {1.8.2}Principio di Indeterminazione}{6}{subsubsection.1.8.2}%
+\contentsline {subsubsection}{\numberline {1.8.3}Equazione di Schrodinger}{7}{subsubsection.1.8.3}%
+\contentsline {subsubsection}{\numberline {1.8.4}Energia e Orbitali}{8}{subsubsection.1.8.4}%
+\contentsline {subsubsection}{\numberline {1.8.5}Come sono fatti gli orbitali?}{9}{subsubsection.1.8.5}%
+\contentsline {subsubsection}{\numberline {1.8.6}Gli atomi polielettronic}{10}{subsubsection.1.8.6}%
+\contentsline {subsubsection}{\numberline {1.8.7}Effetto Schermo}{10}{subsubsection.1.8.7}%
+\contentsline {subsubsection}{\numberline {1.8.8}Più orbitali}{11}{subsubsection.1.8.8}%
+\contentsline {subsubsection}{\numberline {1.8.9}Principio di esclusione di Pauli}{11}{subsubsection.1.8.9}%
+\contentsline {subsubsection}{\numberline {1.8.10}Principio di Aufbau}{11}{subsubsection.1.8.10}%
+\contentsline {subsection}{\numberline {1.9}Elementi diamagneici e paramagneitici}{12}{subsection.1.9}%
+\contentsline {subsection}{\numberline {1.10}Elettroni di Valenza ed Interni}{12}{subsection.1.10}%
+\contentsline {subsection}{\numberline {1.11}Proprietà periodiche}{13}{subsection.1.11}%
+\contentsline {subsubsection}{\numberline {1.11.1}Raggio Atomico}{13}{subsubsection.1.11.1}%
+\contentsline {subsubsection}{\numberline {1.11.2}Raggio Ionico}{14}{subsubsection.1.11.2}%
+\contentsline {subsubsection}{\numberline {1.11.3}Energia di Ionizzazione}{14}{subsubsection.1.11.3}%
+\contentsline {subsubsection}{\numberline {1.11.4}Affinità elettronica}{15}{subsubsection.1.11.4}%
+\contentsline {subsubsection}{\numberline {1.11.5}Elettronegatività}{15}{subsubsection.1.11.5}%
+\contentsline {section}{\numberline {2}Formazione di uno Ione}{16}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Ioni}{16}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Stato di Ossidazione}{16}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Numero di Ossidazione}{17}{subsection.2.3}%
+\contentsline {section}{\numberline {3}Formula Molecolare}{18}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Percentuali in Massa}{18}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Formula Minima}{18}{subsection.3.2}%
+\contentsline {section}{\numberline {4}Nomenclatura}{19}{section.4}%
