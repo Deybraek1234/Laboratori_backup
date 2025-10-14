@@ -34,5 +34,5 @@ void fotodiodografico() {
    line->Draw("SAME");
    Tl->Draw("Same");
    c1->Update();
-   c1->SaveAs("fotodiodografico.jpg");
+   c1->SaveAs("fotodiodografico.eps");
 }

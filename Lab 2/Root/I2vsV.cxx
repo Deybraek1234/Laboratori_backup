@@ -45,5 +45,5 @@ void I2vsV() {
    tl->Draw();
    fit_func->Draw("SAME");
    c1->Update();
-   c1->SaveAs("I2vsV.jpg");
+   c1->SaveAs("I2vsV.eps");
 }

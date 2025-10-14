@@ -22,5 +22,5 @@ void fotodiodord() {
 
    gr->Draw("AP");
    c1->Update();
-   c1->SaveAs("fotodiodord.jpg");
+   c1->SaveAs("fotodiodord.eps");
 }

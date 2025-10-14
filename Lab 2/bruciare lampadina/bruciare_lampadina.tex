@@ -7,18 +7,13 @@
 \usepackage{siunitx}
 \usepackage{hyperref}
 \usepackage{epstopdf}
-
-\newcommand{\mymeter}[2] 
-{  % #1 = name , #2 = rotation angle
-\begin{scope}[transform shape,rotate=#2]
-\draw[thick] (#1)node(){$\mathbf V$} circle (11pt);
-\draw[rotate=45,-latex] (#1)  +(-17pt,0) --+(17pt,0);
-\end{scope}
-}
+\usepackage{soul}
+\usepackage{indentfirst}
 
 \title{Misura della Curva Caratteristica di una Lampadina a Incandescenza}
 \author{Giovanni Simionato \and Jia Le Sofia Zheng \and Francesco Giuliano Rossi}
 \date{13 Ottobre 2025}
+
 
 \begin{document}
 \maketitle
@@ -30,21 +25,19 @@ In questa esperienza, si voleva misurare la curva caretteristica di una lampadin
    \draw (0,0) to[ battery1, name=myB ] (0,2)
    to [ resistor ] (3,2)
    to [ bulb ] (3,-1)
-   to [ ammeter, mirror ] (0,-1)
+   to [ rmeter, t=A ] (0,-1)
    to (0,0)
 
    (2,1.5) to (3,1.5)
-   (2,1.5) to [voltmeter, color=white, name=V1] (2,-0.5)
+   (2,1.5) to [rmeter, t=V] (2,-0.5)
    to (3,-0.5)
 
    (4.3,2) to [photodiode, mirror] (4.3,-1)
    to (5.5,-1) 
-   to [voltmeter, color=white, name=V2] (5.5,2)
+   to [rmeter, t=V] (5.5,2)
    to (4.3,2);
    
    \ctikztunablearrow{1}{1}{60}{myB}
-   \mymeter{V1}{0}
-   \mymeter{V2}{0}
 \end{circuitikz}
 \caption{Circuito usato per V$<$1}
 \end{wrapfigure}
@@ -59,10 +52,10 @@ Di seguito rapportiamo tutti i dati raccolti in forma di grafico della corrente 
 
 \textbf{\huge{COSE DA SCRIVERE}}
 \begin{enumerate}
-   \item inserire GraficiI
+   \item \st{inserire Grafici}
    \item analizza curva zoomata e commenti i parametri del fit lineare con errori 
    \item inserire accensione lampadina ovunque
-   \item fare fit lineare per I$^2$ vs V con errori
+   \item \st{fare fit lineare per I$^2$ vs V con errori}
    \item commenti Fotodiodo/Resistenza dinamica
    \item commentare secondo e terzo grafico del comportamento omico che finisce prima dell'accendimento perchè resistevitività cambia per scaldamento filamento
    \item commentiamo buco nel fotodiodo
@@ -76,25 +69,25 @@ Di seguito rapportiamo tutti i dati raccolti in forma di grafico della corrente 
 \FloatBarrier
 
 \begin{figure}[!htbp]\label{accensione}
-      \includegraphics[width=\textwidth]{immagini/graficozoomato1.jpg}
+      \includegraphics[width=\textwidth]{immagini/graficozoomato1.eps}
         \caption{Grafico fino all'accensione}
 \end{figure}
 \FloatBarrier
 
 \begin{figure}[!htbp]
-      \includegraphics[width=\textwidth]{immagini/fotodiodografico.png}
+      \includegraphics[width=\textwidth]{immagini/fotodiodografico.eps}
         \caption{Andamento corrente fotodiodo}
 \end{figure}
 \FloatBarrier
 
 \begin{figure}[!htbp]
-      \includegraphics[width=\textwidth]{immagini/I2vsV.png}
+      \includegraphics[width=\textwidth]{immagini/I2vsV.eps}
         \caption{Curva caratteristica scala semi-quadratica}
 \end{figure}
 \FloatBarrier
 
 \begin{figure}[!htbp]
-      \includegraphics[width=\textwidth]{immagini/fotodiodord.png}
+      \includegraphics[width=\textwidth]{immagini/fotodiodord.eps}
         \caption{Resistenza Dinamica rispetto al potenziale}
 \end{figure}
 \FloatBarrier
@@ -103,6 +96,6 @@ Di seguito rapportiamo tutti i dati raccolti in forma di grafico della corrente 
 
 \newpage
 \huge{COSE DA SISTEMARE}
-FRECCIE SUI MULTIMETRI, INDENT INIZIO SEZIONE, AUMENTA CARATTERE DEGLI ASSI E I PUNTI
+FRECCIE SUI MULTIMETRI, INDENT INIZIO SEZIONE
 
 \end{document}

@@ -59,5 +59,5 @@ void grafico2() {
    //draw everything
    fit_func->Draw("SAME");
    c1->Update();
-   c1->SaveAs("graficozoomato1.jpg");
+   c1->SaveAs("graficozoomato1.eps");
 }

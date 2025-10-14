@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2026/dev/Arch Linux) (preloaded format=pdflatex 2025.9.24)  14 OCT 2025 23:12
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2026/dev/Arch Linux) (preloaded format=pdflatex 2025.9.24)  15 OCT 2025 00:09
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -461,76 +461,104 @@ Package grfext Info: Graphics extension search list:
 (grfext)             \AppendGraphicsExtensions on input line 504.
  (/usr/share/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
-)))
-Package translations Info: No language package found. I am going to use `english' as default language. on input line 23.
+))) (/usr/share/texmf-dist/tex/generic/soul/soul.sty
+Package: soul 2023-06-14 v3.1 Permit use of UTF-8 characters in soul (HO)
+ (/usr/share/texmf-dist/tex/generic/soul/soul-ori.sty
+Package: soul-ori 2023-06-14 v3.1 letterspacing/underlining (mf)
+\SOUL@word=\toks35
+\SOUL@lasttoken=\toks36
+\SOUL@syllable=\toks37
+\SOUL@cmds=\toks38
+\SOUL@buffer=\toks39
+\SOUL@token=\toks40
+\SOUL@syllgoal=\dimen287
+\SOUL@syllwidth=\dimen288
+\SOUL@charkern=\dimen289
+\SOUL@hyphkern=\dimen290
+\SOUL@dimen=\dimen291
+\SOUL@dimeni=\dimen292
+\SOUL@minus=\count322
+\SOUL@comma=\count323
+\SOUL@apo=\count324
+\SOUL@grave=\count325
+\SOUL@spaceskip=\skip54
+\SOUL@ttwidth=\dimen293
+\SOUL@uldp=\dimen294
+\SOUL@ulht=\dimen295
+) (/usr/share/texmf-dist/tex/generic/etexcmds/etexcmds.sty
+Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
+)) (/usr/share/texmf-dist/tex/latex/tools/indentfirst.sty
+Package: indentfirst 2023/07/02 v1.03 Indent first paragraph (DPC)
+)
+Package translations Info: No language package found. I am going to use `english' as default language. on input line 18.
  (/usr/share/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count322
+\l__color_backend_stack_int=\count326
 \l__pdf_internal_box=\box75
 ) (./bruciare_lampadina.aux)
 \openout1 = `bruciare_lampadina.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
  (/usr/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count323
-\scratchdimen=\dimen287
+\scratchcounter=\count327
+\scratchdimen=\dimen296
 \scratchbox=\box76
-\nofMPsegments=\count324
-\nofMParguments=\count325
-\everyMPshowfont=\toks35
-\MPscratchCnt=\count326
-\MPscratchDim=\dimen288
-\MPnumerator=\count327
-\makeMPintoPDFobject=\count328
-\everyMPtoPDFconversion=\toks36
+\nofMPsegments=\count328
+\nofMParguments=\count329
+\everyMPshowfont=\toks41
+\MPscratchCnt=\count330
+\MPscratchDim=\dimen297
+\MPnumerator=\count331
+\makeMPintoPDFobject=\count332
+\everyMPtoPDFconversion=\toks42
 ) (/usr/share/texmf-dist/tex/latex/translations/translations-basic-dictionary-english.trsl
 File: translations-basic-dictionary-english.trsl (english translation file `translations-basic-dictionary')
 )
-Package translations Info: loading dictionary `translations-basic-dictionary' for `english'. on input line 23.
-Package hyperref Info: Link coloring OFF on input line 23.
+Package translations Info: loading dictionary `translations-basic-dictionary' for `english'. on input line 18.
+Package hyperref Info: Link coloring OFF on input line 18.
  (./bruciare_lampadina.out) (./bruciare_lampadina.out)
 \@outlinefile=\write4
 \openout4 = `bruciare_lampadina.out'.
 
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 25.
+(Font)              <12> on input line 20.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 25.
+(Font)              <8> on input line 20.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 25.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 46.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 46.
+(Font)              <6> on input line 20.
 
-Overfull \hbox (8.5614pt too wide) in paragraph at lines 48--49
+Overfull \hbox (8.69049pt too wide) in paragraph at lines 41--42
 [][] 
  []
 
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 42.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 42.
 
 
 [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-Underfull \hbox (badness 10000) in paragraph at lines 58--59
+Underfull \hbox (badness 10000) in paragraph at lines 51--52
 
  []
 
@@ -541,49 +569,85 @@ Package epstopdf Info: Source file: <immagini/bruciarelampa.eps>
 (epstopdf)                    date: 2025-10-14 23:12:32
 (epstopdf)                    size: 10137 bytes
 (epstopdf)             Command: <repstopdf --outfile=immagini/bruciarelampa-eps-converted-to.pdf immagini/bruciarelampa.eps>
-(epstopdf)             \includegraphics on input line 73.
+(epstopdf)             \includegraphics on input line 66.
 Package epstopdf Info: Output file is already uptodate.
-<immagini/bruciarelampa-eps-converted-to.pdf, id=30, 569.12625pt x 347.2975pt>
+<immagini/bruciarelampa-eps-converted-to.pdf, id=29, 569.12625pt x 347.2975pt>
 File: immagini/bruciarelampa-eps-converted-to.pdf Graphic file (type pdf)
 <use immagini/bruciarelampa-eps-converted-to.pdf>
-Package pdftex.def Info: immagini/bruciarelampa-eps-converted-to.pdf  used on input line 73.
+Package pdftex.def Info: immagini/bruciarelampa-eps-converted-to.pdf  used on input line 66.
 (pdftex.def)             Requested size: 345.0pt x 210.53693pt.
-<immagini/graficozoomato1.jpg, id=31, 1603.9925pt x 979.66pt>
-File: immagini/graficozoomato1.jpg Graphic file (type jpg)
-<use immagini/graficozoomato1.jpg>
-Package pdftex.def Info: immagini/graficozoomato1.jpg  used on input line 79.
-(pdftex.def)             Requested size: 345.0pt x 210.71248pt.
+Package epstopdf Info: Source file: <immagini/graficozoomato1.eps>
+(epstopdf)                    date: 2025-10-14 23:57:33
+(epstopdf)                    size: 15199 bytes
+(epstopdf)             Output file: <immagini/graficozoomato1-eps-converted-to.pdf>
+(epstopdf)                    date: 2025-10-14 23:58:41
+(epstopdf)                    size: 9633 bytes
+(epstopdf)             Command: <repstopdf --outfile=immagini/graficozoomato1-eps-converted-to.pdf immagini/graficozoomato1.eps>
+(epstopdf)             \includegraphics on input line 72.
+Package epstopdf Info: Output file is already uptodate.
+<immagini/graficozoomato1-eps-converted-to.pdf, id=30, 569.12625pt x 347.2975pt>
+File: immagini/graficozoomato1-eps-converted-to.pdf Graphic file (type pdf)
+<use immagini/graficozoomato1-eps-converted-to.pdf>
+Package pdftex.def Info: immagini/graficozoomato1-eps-converted-to.pdf  used on input line 72.
+(pdftex.def)             Requested size: 345.0pt x 210.53693pt.
 
 
 [2 <./immagini/bruciarelampa-eps-converted-to.pdf>]
-<immagini/fotodiodografico.png, id=52, 603.25375pt x 356.33125pt>
-File: immagini/fotodiodografico.png Graphic file (type png)
-<use immagini/fotodiodografico.png>
-Package pdftex.def Info: immagini/fotodiodografico.png  used on input line 85.
-(pdftex.def)             Requested size: 345.0pt x 203.78513pt.
-<immagini/I2vsV.png, id=53, 601.24625pt x 363.3575pt>
-File: immagini/I2vsV.png Graphic file (type png)
-<use immagini/I2vsV.png>
-Package pdftex.def Info: immagini/I2vsV.png  used on input line 91.
-(pdftex.def)             Requested size: 345.0pt x 208.50201pt.
+Package epstopdf Info: Source file: <immagini/fotodiodografico.eps>
+(epstopdf)                    date: 2025-10-14 23:57:33
+(epstopdf)                    size: 11982 bytes
+(epstopdf)             Output file: <immagini/fotodiodografico-eps-converted-to.pdf>
+(epstopdf)                    date: 2025-10-14 23:58:42
+(epstopdf)                    size: 8164 bytes
+(epstopdf)             Command: <repstopdf --outfile=immagini/fotodiodografico-eps-converted-to.pdf immagini/fotodiodografico.eps>
+(epstopdf)             \includegraphics on input line 78.
+Package epstopdf Info: Output file is already uptodate.
+<immagini/fotodiodografico-eps-converted-to.pdf, id=51, 569.12625pt x 347.2975pt>
+File: immagini/fotodiodografico-eps-converted-to.pdf Graphic file (type pdf)
+<use immagini/fotodiodografico-eps-converted-to.pdf>
+Package pdftex.def Info: immagini/fotodiodografico-eps-converted-to.pdf  used on input line 78.
+(pdftex.def)             Requested size: 345.0pt x 210.53693pt.
+Package epstopdf Info: Source file: <immagini/I2vsV.eps>
+(epstopdf)                    date: 2025-10-14 23:57:34
+(epstopdf)                    size: 13583 bytes
+(epstopdf)             Output file: <immagini/I2vsV-eps-converted-to.pdf>
+(epstopdf)                    date: 2025-10-14 23:58:42
+(epstopdf)                    size: 10590 bytes
+(epstopdf)             Command: <repstopdf --outfile=immagini/I2vsV-eps-converted-to.pdf immagini/I2vsV.eps>
+(epstopdf)             \includegraphics on input line 84.
+Package epstopdf Info: Output file is already uptodate.
+<immagini/I2vsV-eps-converted-to.pdf, id=52, 569.12625pt x 347.2975pt>
+File: immagini/I2vsV-eps-converted-to.pdf Graphic file (type pdf)
+<use immagini/I2vsV-eps-converted-to.pdf>
+Package pdftex.def Info: immagini/I2vsV-eps-converted-to.pdf  used on input line 84.
+(pdftex.def)             Requested size: 345.0pt x 210.53693pt.
 
 
-[3 <./immagini/graficozoomato1.jpg> <./immagini/fotodiodografico.png (PNG copy)>]
-<immagini/fotodiodord.png, id=60, 597.23125pt x 366.36874pt>
-File: immagini/fotodiodord.png Graphic file (type png)
-<use immagini/fotodiodord.png>
-Package pdftex.def Info: immagini/fotodiodord.png  used on input line 97.
-(pdftex.def)             Requested size: 345.0pt x 211.63869pt.
+[3 <./immagini/graficozoomato1-eps-converted-to.pdf> <./immagini/fotodiodografico-eps-converted-to.pdf>]
+Package epstopdf Info: Source file: <immagini/fotodiodord.eps>
+(epstopdf)                    date: 2025-10-14 23:57:34
+(epstopdf)                    size: 11176 bytes
+(epstopdf)             Output file: <immagini/fotodiodord-eps-converted-to.pdf>
+(epstopdf)                    date: 2025-10-14 23:58:43
+(epstopdf)                    size: 8506 bytes
+(epstopdf)             Command: <repstopdf --outfile=immagini/fotodiodord-eps-converted-to.pdf immagini/fotodiodord.eps>
+(epstopdf)             \includegraphics on input line 90.
+Package epstopdf Info: Output file is already uptodate.
+<immagini/fotodiodord-eps-converted-to.pdf, id=71, 569.12625pt x 347.2975pt>
+File: immagini/fotodiodord-eps-converted-to.pdf Graphic file (type pdf)
+<use immagini/fotodiodord-eps-converted-to.pdf>
+Package pdftex.def Info: immagini/fotodiodord-eps-converted-to.pdf  used on input line 90.
+(pdftex.def)             Requested size: 345.0pt x 210.53693pt.
 
 
-[4 <./immagini/I2vsV.png (PNG copy)> <./immagini/fotodiodord.png (PNG copy)>]
-Overfull \hbox (0.18373pt too wide) in paragraph at lines 105--107
+[4 <./immagini/I2vsV-eps-converted-to.pdf> <./immagini/fotodiodord-eps-converted-to.pdf>]
+Overfull \hbox (0.18373pt too wide) in paragraph at lines 98--100
 []\OT1/cmr/m/n/20.74 COSE DA SIS-TEMARE FREC-CIE SUI
  []
 
 
-Overfull \hbox (28.90448pt too wide) in paragraph at lines 105--107
-\OT1/cmr/m/n/20.74 MUL-TI-METRI, IN-DENT IN-IZIO SEZIONE,
+Overfull \hbox (23.72688pt too wide) in paragraph at lines 98--100
+\OT1/cmr/m/n/20.74 MUL-TI-METRI, IN-DENT IN-IZIO SEZIONE 
  []
 
 
@@ -597,18 +661,18 @@ Package rerunfilecheck Info: File `bruciare_lampadina.out' has not changed.
 (rerunfilecheck)             Checksum: 923105398D7DA9AE3416162F6E4F50AE;270.
  ) 
 Here is how much of TeX's memory you used:
- 41714 strings out of 475171
- 1039118 string characters out of 5767095
- 1621251 words of memory out of 5000000
- 64299 multiletter control sequences out of 15000+600000
- 564010 words of font info for 53 fonts, out of 8000000 for 9000
+ 41949 strings out of 475171
+ 1044012 string characters out of 5767095
+ 1624319 words of memory out of 5000000
+ 64521 multiletter control sequences out of 15000+600000
+ 563704 words of font info for 52 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  99i,7n,105p,554b,1025s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on bruciare_lampadina.pdf (5 pages, 227818 bytes).
+</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
+Output written on bruciare_lampadina.pdf (5 pages, 123853 bytes).
 PDF statistics:
- 112 PDF objects out of 1000 (max. 8388607)
- 81 compressed objects within 1 object stream
+ 141 PDF objects out of 1000 (max. 8388607)
+ 100 compressed objects within 1 object stream
  22 named destinations out of 1000 (max. 500000)
  54 words of extra memory for PDF output out of 10000 (max. 10000000)
 
