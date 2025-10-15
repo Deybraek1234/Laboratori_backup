@@ -4,7 +4,7 @@ void grafico2() {
    c1->GetFrame()->SetBorderSize(12);
   
    TGraphErrors *gr = new TGraphErrors("grafico2.txt","%lg %lg %lg %lg");
-   gr->SetTitle("Curva Caratteristica V<1");
+   gr->SetTitle("Curva Caratteristica V<1V");
    gr->SetMarkerColor(2);
    gr->SetMarkerStyle(5);
    gr->SetLineColor(9);
@@ -12,11 +12,11 @@ void grafico2() {
 
    gr->GetXaxis()->SetTitle("Potenziale (V)");
    gr->GetXaxis()->CenterTitle(true);
-   gr->GetXaxis()->SetTitleSize(0.045);
+   gr->GetXaxis()->SetTitleSize(0.047);
 
    gr->GetYaxis()->SetTitle("Corrente (A)");
    gr->GetYaxis()->CenterTitle(true);
-   gr->GetYaxis()->SetTitleSize(0.045);
+   gr->GetYaxis()->SetTitleSize(0.047);
 
    gr->Draw("AP");
 
@@ -29,15 +29,16 @@ void grafico2() {
    double x_fit_end = g1->GetX()[N_Points-1];
    double x_plot_start = g1->GetXaxis()->GetXmin();
    double x_plot_end = g1->GetXaxis()->GetXmax();
-   TF1 *fit_func = new TF1("fit_func", "pol1", x_plot_start, x_plot_end);   
+   TF1 *fit_func = new TF1("fit_func", "pol1", x_plot_start, x_plot_end); 
    g1->Fit(fit_func, "R", "", x_fit_start, x_fit_end);
    //per parametri fit
    double intercept = fit_func->GetParameter(0);
    double slope = fit_func->GetParameter(1);
    TString fit_label = TString::Format(
-    "#splitline{Fit Lineare:}{y = (%.3e) + (%.3e)x}",
-    intercept, slope
+    "#splitline{Fit Lineare:}{y = (%.3e)x + (%.3e)}",
+    slope, intercept
 );
+   fit_func->SetLineColor(48);
 
 
    //linea accensione lampadina
