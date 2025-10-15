@@ -52,6 +52,15 @@ void grafico_no_fit() {
    g1->GetYaxis()->CenterTitle(true);
    //g1->GetYaxis()->SetTitleSize();
 
+   const int leg_number
+   std::cout<<"Quanti entries nella legenda";
+   std::cin >> leg_number
+
+   //legenda
+   TLegend *Tl = new TLegend(0.1,0.9,0.35, 0.75)
+   Tl->AddEntry(g1, "Dati Misurati", "ep");
+   
+
    //draw everything
    g1->Draw("SAME AP");
    cv->Update();
