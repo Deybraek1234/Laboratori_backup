@@ -4,6 +4,7 @@
 \usepackage{circuitikz}
 \usepackage{placeins}
 \usepackage{wrapfig}
+\usepackage[italian]{babel}
 \usepackage{siunitx}
 \usepackage{hyperref}
 \usepackage{epstopdf}
@@ -58,7 +59,7 @@ Di seguito riportiamo tutti i dati raccolti in forma di grafico della corrente r
         \caption{Curva caratteristica della lampadina a incandescenza}
 \end{figure}
 \FloatBarrier
-Si può notare che all'inizio l'andamento è in buona approssimazione lineare (vedi Figura 3), come descritto dalla legge di Ohm. Il fit lineare ottenuto con il metodo dei minimi quadrati ha come equazione y=mx+q, con pendenza m=(0.4708$\pm 0.0002) \Omega$ e intercetta q$=(1.069\pm0.009)\times10^3$A.
+Si può notare che all'inizio l'andamento è in buona approssimazione lineare (vedi Figura 3), come descritto dalla legge di Ohm. Il fit lineare ottenuto con il metodo dei minimi quadrati ha come equazione y=mx+q, con pendenza m=(0.4708$\pm 0.0002) \Omega$ e intercetta q$=(1.069\pm0.009)\times10^{-3}$A.
 
 Essendo un grafico della corrente rispetto al potenziale, la resistenza è uguale all'inverso della pendenza, che ci porta ad avere un valore della resistenza della lampadina di $(2.1242\pm 0.0009) \Omega$. Per il fit lineare, sono stati considerati dati fino a $V=0.0756$V, dato che dopo devia da un comportamento lineare. 
 
@@ -70,7 +71,7 @@ Essendo un grafico della corrente rispetto al potenziale, la resistenza è ugual
 \FloatBarrier
 \noindent{Infatti, con l'aumento della temperatura aumenta la resistività del materiale e quindi aumenta di conseguenza la resistenza, deviando dal comportamento lineare.}
 
-Misurando nello stesso tempo la corrente emessa dal fotodiodo, è stato registrato un valore circa costante di $I=0.15$mA dall'accensione dell'alimentatore. Per $V=0.3310$V è stato misurato un'aumento netto di corrente $I=0.50$mA corrispondente alla prima transizione di fase: la lampadina inizia ad emettere luce oltre al riscaldamento per effetto Joule. 
+Misurando nello stesso tempo la corrente emessa dal fotodiodo, è stato registrato un valore circa costante di $I=(0.15 \pm 0.01)$mA dall'accensione dell'alimentatore. Per $V=0.3310$V è stato misurato un'aumento netto di corrente $I=(0.50 \pm 0.01)$mA corrispondente alla prima transizione di fase: la lampadina inizia ad emettere luce oltre al riscaldamento per effetto Joule. 
 
 Da $V=0.520$V la corrente emessa dal fotodiodo inizia ad assumere valori anomali. Questo potrebbe essere causato dalla saturazione del fotodiodo. Per questo motivo, si è passati alla seconda fase dell'esperimento, togliendo il fotodiodo e la resistenza dal circuito: il fotodiodo serviva solo a registrare l'istante di accensione della lampadina. 
 
@@ -94,7 +95,9 @@ In questo caso, l'alta percentuale di incertezza è dovuta alla scelta di usare 
 
 Dal momento che la resistenza della lampadina non segue un andamento ohmico, è utile definire la resistenza dinamica su intervalli i-esimi: $R_{i} = \frac{\Delta V_i}{\Delta I_i}$. 
 
-Graficando la resistenza dinamica così calcolata in funzione del potenziale, si vedono il cambio di pendenza e le fluttuazioni corrispondenti alle due transizioni di fase. In particolare, nella seconda si ottengono valori della resistenza dinamica molti diversi tra loro e addirittura in certi casi negativi. 
+Graficando la resistenza dinamica così calcolata in funzione del potenziale, si vedono il cambio di pendenza e le fluttuazioni corrispondenti alle due transizioni di fase. In particolare, nella seconda si ottengono valori della resistenza diversi tra loro e addirittura in certi casi negativi. 
+
+Nei casi in cui la resistenza dinamica ha valore nullo, per calcolare il suo errore è stato usato la semidispersione. 
 
 \begin{figure}[!htbp]
   \centering

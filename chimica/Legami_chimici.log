@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2026/dev/Arch Linux) (preloaded format=pdflatex 2025.10.16)  16 OCT 2025 13:06
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2026/dev/Arch Linux) (preloaded format=pdflatex 2025.10.16)  16 OCT 2025 13:47
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**/home/franci/Code/chimica/chimica_appunti.tex
-(/home/franci/Code/chimica/chimica_appunti.tex
+**/home/franci/Code/chimica/Legami_chimici.tex
+(/home/franci/Code/chimica/Legami_chimici.tex
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
 (/usr/share/texmf-dist/tex/latex/base/article.cls
@@ -545,8 +545,8 @@ File: pgflibraryarrows.meta.code.tex 2023-01-15 v3.1.10 (3.1.10)
 Package: chemfig 2023/12/28 v1.66 Draw molecule with an easy syntax (CT)
 )
 Package translations Info: No language package found. I am going to use `english' as default language. on input line 21.
- (./chimica_appunti.aux)
-\openout1 = `chimica_appunti.aux'.
+ (./Legami_chimici.aux)
+\openout1 = `Legami_chimici.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 21.
 LaTeX Font Info:    ... okay on input line 21.
@@ -592,9 +592,9 @@ Package translations Info: loading dictionary `translations-basic-dictionary' fo
 Package chemgreek Info: Activating mapping `default' on line 21.
 
 Package hyperref Info: Link coloring OFF on input line 21.
- (./chimica_appunti.out) (./chimica_appunti.out)
+ (./Legami_chimici.out) (./Legami_chimici.out)
 \@outlinefile=\write4
-\openout4 = `chimica_appunti.out'.
+\openout4 = `Legami_chimici.out'.
 
 LaTeX Font Info:    Trying to load font information for U+rsfs on input line 23.
  (/usr/share/texmf-dist/tex/latex/jknapltx/ursfs.fd
@@ -607,165 +607,39 @@ File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 LaTeX Font Info:    Trying to load font information for U+msb on input line 23.
  (/usr/share/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) (./chimica_appunti.toc
+) (./Legami_chimici.toc)
+\tf@toc=\write5
+\openout5 = `Legami_chimici.toc'.
+
+
 
 [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}])
-\tf@toc=\write5
-\openout5 = `chimica_appunti.toc'.
-
-
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
 
 [2]
 
-[3]
-<immagini/tavolaperiodica.jpg, id=336, 2252.415pt x 1663.21375pt>
-File: immagini/tavolaperiodica.jpg Graphic file (type jpg)
-<use immagini/tavolaperiodica.jpg>
-Package pdftex.def Info: immagini/tavolaperiodica.jpg  used on input line 68.
-(pdftex.def)             Requested size: 345.0pt x 254.75003pt.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-
-[4]
-Overfull \hbox (12.3618pt too wide) in paragraph at lines 83--84
-[]\OT1/cmr/m/n/10 La massa Atom-ica rel-a-tiva di un el-e-mento ^^Re la me-dia pe-sata rispetto all'abbondanza
- []
-
-
-
-[5{/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc} <./immagini/tavolaperiodica.jpg>]
-
-[6]
-Overfull \hbox (16.58182pt too wide) in paragraph at lines 120--122
-\OT1/cmr/m/n/10 dove H ^^Re l'operatore Hamil-to-ni-ano (??daphoque??), E ^^Re l'energia to-tale dell'elettrone
- []
-
-
-
-[7]
-<immagini/orbitali.jpg, id=356, 717.68124pt x 400.49625pt>
-File: immagini/orbitali.jpg Graphic file (type jpg)
-<use immagini/orbitali.jpg>
-Package pdftex.def Info: immagini/orbitali.jpg  used on input line 170.
-(pdftex.def)             Requested size: 224.2479pt x 125.13643pt.
-
-
-[8]
-Overfull \hbox (18.88962pt too wide) in paragraph at lines 175--176
-[]\OT1/cmr/m/n/10 All'aumentare di n, au-menta il vol-ume oc-cu-pato da un or-bitale, men-tre all'aumentare
- []
-
-
-
-[9 <./immagini/orbitali.jpg>]
-<immagini/Shielding-Effect.jpg, id=369, 803.0pt x 401.5pt>
-File: immagini/Shielding-Effect.jpg Graphic file (type jpg)
-<use immagini/Shielding-Effect.jpg>
-Package pdftex.def Info: immagini/Shielding-Effect.jpg  used on input line 199.
-(pdftex.def)             Requested size: 258.75pt x 129.37708pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 206--207
-
- []
-
-
-
-[10 <./immagini/Shielding-Effect.jpg (PNG copy)>]
-<immagini/orbitali.png, id=375, 591.20876pt x 346.29375pt>
-File: immagini/orbitali.png Graphic file (type png)
-<use immagini/orbitali.png>
-Package pdftex.def Info: immagini/orbitali.png  used on input line 221.
-(pdftex.def)             Requested size: 258.75pt x 151.56126pt.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-
-[11]
-
-[12 <./immagini/orbitali.png (PNG copy)>]
-<immagini/tavolaperiodicablocchi.png, id=385, 593.21625pt x 308.15125pt>
-File: immagini/tavolaperiodicablocchi.png Graphic file (type png)
-<use immagini/tavolaperiodicablocchi.png>
-Package pdftex.def Info: immagini/tavolaperiodicablocchi.png  used on input line 243.
-(pdftex.def)             Requested size: 345.0pt x 179.21684pt.
-
-
-[13 <./immagini/tavolaperiodicablocchi.png (PNG copy)>]
-Underfull \hbox (badness 10000) in paragraph at lines 262--263
-
- []
-
-
-
-[14]
-
-[15]
-<immagini/indio_ione.png, id=401, 389.455pt x 624.3325pt>
-File: immagini/indio_ione.png Graphic file (type png)
-<use immagini/indio_ione.png>
-Package pdftex.def Info: immagini/indio_ione.png  used on input line 319.
-(pdftex.def)             Requested size: 120.7521pt x 193.56966pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 329--330
-
- []
-
-
-Underfull \hbox (badness 1789) in paragraph at lines 331--332
-\OT1/cmr/m/n/10 man-cano per com-pletare il gus-cio. Quindi
- []
-
-
-
-[16 <./immagini/indio_ione.png (PNG copy)>]
-LaTeX Font Info:    Trying to load font information for OMS+cmr on input line 355.
- (/usr/share/texmf-dist/tex/latex/base/omscmr.fd
-File: omscmr.fd 2024/11/19 v2.5n Standard LaTeX font definitions
-)
-LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 355.
-
-
-[17]
-
-[18]
-
-[19]
-
-[20]
-
-[21]
-
-[22]
-
-[23] (./chimica_appunti.aux)
+[3] (./Legami_chimici.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
-Package rerunfilecheck Info: File `chimica_appunti.out' has not changed.
-(rerunfilecheck)             Checksum: 13B63BA140C3B990CC93C7D57299A54D;9511.
+Package rerunfilecheck Info: File `Legami_chimici.out' has not changed.
+(rerunfilecheck)             Checksum: 1FB72124DB3317834F9E9EBA52471AA1;744.
  ) 
 Here is how much of TeX's memory you used:
- 26539 strings out of 475119
- 543051 string characters out of 5765715
- 916243 words of memory out of 5000000
- 49021 multiletter control sequences out of 15000+600000
- 568323 words of font info for 75 fonts, out of 8000000 for 9000
+ 26264 strings out of 475119
+ 538154 string characters out of 5765715
+ 906145 words of memory out of 5000000
+ 48872 multiletter control sequences out of 15000+600000
+ 567689 words of font info for 73 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 99i,16n,105p,918b,1111s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on chimica_appunti.pdf (23 pages, 2464071 bytes).
+ 99i,12n,105p,730b,1021s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
+Output written on Legami_chimici.pdf (3 pages, 118168 bytes).
 PDF statistics:
- 564 PDF objects out of 1000 (max. 8388607)
- 496 compressed objects within 5 object streams
- 129 named destinations out of 1000 (max. 500000)
- 507 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 93 PDF objects out of 1000 (max. 8388607)
+ 69 compressed objects within 1 object stream
+ 9 named destinations out of 1000 (max. 500000)
+ 45 words of extra memory for PDF output out of 10000 (max. 10000000)
 

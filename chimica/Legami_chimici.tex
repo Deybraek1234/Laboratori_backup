@@ -1,0 +1,74 @@
+\documentclass[a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{siunitx}
+\usepackage[version=4]{mhchem}
+\usepackage{hyperref}
+\usepackage{mathrsfs}
+\usepackage{amssymb}
+\usepackage{placeins}
+\usepackage{wrapfig}
+\usepackage{chemfig}
+
+
+\title{Appunti di Chimica (Parte Legami Chimici)}
+\author{Francesco Giuliano Rossi}
+\date{A.A. 2025/2026}
+\setlength\parindent{0pt}
+\graphicspath{ {immagini} }
+\hfuzz=10.0pt
+
+\begin{document}
+\maketitle
+\tableofcontents
+\newpage
+
+\section{Legame Ionico}
+Legame ionico è quel legame che si instaura tra particelle che hanno una carica elettrica netta. In quel caso l'interazione tra elementi sarà una puramente elettrostatica. Il legame ionico giustifica l'aggregazione degli ioni e cationi che stanno insieme. Esempio: \ce{Na + Cl = Na+ Cl-}. 
+
+I composti ionici allo stato solido formano un reticolo cristallino
+ordinato tridimensionale in cui ogni catione risente dell'attrazione
+elettrostatica di diversi anioni, e viceversa. Quetsi composti ionici si chiamano solidi ionici. 
+
+La formazione di solidi così è favorita per motivi energetici. Il processo che va da \ce{Na+ Cl- -> NaCl} è spontaneo, percè porta l'energia potenziale del sistema ad un livello più bassa. 
+
+Una misura diretta della forza di un legame ionico è l'energia di dissociazione di una coppia di ioni allo stto gassoso, definita come variazione di energia per il processo 
+***
+
+Facciamo finta di avere un ideale cristallo lineare, monodimensionale, costituito da cationi e anioni con carica positiva e negativa alternati. Per un singolo ione, e calcoliamo l'energia potenziale secondo le formule dell'elettrostatica per le diverse particelle, risulta essere 
+\begin{equation*}
+    E_p = 2 \times \frac{q^2}{4\pi \varepsilon_0 d} (-\frac{z^2}{d} + \frac{z^2}{2d} - \frac{z^2}{3d} + ...) = -2 \times \frac{z^2 q^2}{4 \pi \varepsilon d} \times \ln(2)
+\end{equation*}
+mentre per una mole risulta essere 
+\begin{equation*}
+    E_p = -2 \times \frac{N_A z^2 q^2}{4 \pi \varepsilon_0 d}
+\end{equation*}
+
+In tre dimensioni diventa molto più difficile. Si aggiunge un termine che tiene in conto la stechiometria e struttura cristalina della molecola. $E_p \propto \frac{1}{d} \rightarrow \Delta E_{LiCl} > \Delta E_{NaCl} > \Delta E_{KCl}$. Il legame ionico è quello più semplice, ma non si instaura tra tanti composti. 
+
+\section{Legame Covalente}
+Non ha una simmetria forte quanto il legame ionico, ma il legame covalente è quello che si trova nella maggioparte dei casi. Se due atomi hanno la \textbf{stessa} energia di ionizzazione e la \textbf{stessa} affinità elettronica, non c'é nessun motivo per cui ci sarà una trasferimento permanente del carica. Quando avviene questo, si hanno una condivisione di elettroni, che porta ad una distribuzione di carica simmetrica tra i due nuceli (legame covalente puro). 
+
+Se immaginiamo di avere due nuclei, ad una certa distanza una dall'altra, attorno a questi nuclei ci saranno i loro elettroni, e a seconda di dove si trovano possono favorire l'attrazione o la repulsione dei nuclei. 
+
+Un elettrone nella regione esterna ad entrambi i nuclei esercita una forza maggiore sul nucleo più vicino. Questo elettrone tenderà ad attrarre entrambi i nuclei nella direzione dell'asse internucleare con diverse forze. La differenza tra queste due forze è una forza risultante che tende a separare i due nuclei. Se invece l'elettrone si trova tra i nuclei le forze che esso esercita tende ad attrarre i nuclei. 
+
+\subsection{Legame covalente polare}
+In un legame covalente puro gli elettroni di legame sono simmetricamente distribuiti attorno ai due nuclei. 
+
+In un legame completamente ionico uno o più elettroni sono trasferiti da un atomo all'altro.
+
+Questo la caratteristica di condovisione di elettrone si combina con l'esistenza di regioni positivi e negativi, o di poli elettrici, si parla di legame covalente polare. Tipo nel caso della molecola HCl (gassosa), la condivisione dell'elettrone di valenza porta ad un'interessante distribuzione elettronica. Sul cloro c'è un eccesso densitá elettronica, e una parziale carica negativa, mentre sull'idrogeno si ha meno densitá elettronica e quindi una parziale carica positiva. 
+
+Questo avviene perché anche se i atomi hanno la stessa energia di ionizzazione, il cloro ha un'affinitá elettronica molto più alta, quindi tenderà a prendere elettroni più facilmente dell'idrogeno. Ad una certa distanza, ci sarà associato un momento dipolare (vettore) $ |\vec{\mu}| = \delta l$. Misura del momento di polo è Debai. Con più momenti di dipolo, il momento di dipolo della molecola, dipenderà dal modo in cui gli atomi sono disposti. Tipo \ce{BF3} e \ce{Pf3}. Il primo è simmetrico, e quindi $\mu$ = 0, mentre il secondo non lo è quindi $\mu \neq 0$. La formazione di legami chimici dipende dalla loro disposizione nello spazio. 
+
+\section{Come distinguere tra legami covalenti e non covalenti}
+Come facciamo a sapere quando il leame sarà covalente. Quando la differenza di elettronegatività $\Delta \chi = 0$ sarà un legame covalente puro. Quando è $0<\Delta \chi \leq 2.0$ si crea un legame covalente polare, mentre quando $\Delta \chi \geq 2.0$ allora si crea un legame ionico. 
+
+Quando un legame si forma, il sistema deve raggiungere un certo livello di energia. Se andiamo a considerare l'energia potenziale in funzione della distanza internucleare, segue sempre una forma strana, chiamata diagramma Leonard-Johnes. Il minimo della curva corrisponde alla distanza interatomica (di equilibrio tra i due atomi) e la profondità la chiameremo energia di legame. Si chiama Energia di dissociazione del legame
+\begin{equation*}
+    A - B_(g) \rightarrow \cdot A_{(g)} + \cdot B_{(g)}
+\end{equation*}
+Più profonda è la buca, il più forte che è il legame, e quindi devo fornire più energia per rompere il legame chimico. 
+
+\end{document}

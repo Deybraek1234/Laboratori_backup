@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1760443653.04446 "/home/franci/Code/chimica/chimica_appunti.tex" "chimica_appunti.pdf" "chimica_appunti" 1760443654.13222 0
-  "/home/franci/Code/chimica/chimica_appunti.tex" 1760443648.59799 41948 9b312aff6e06af5474c34f39da21928e ""
+["pdflatex"] 1760612777.89622 "/home/franci/Code/chimica/chimica_appunti.tex" "chimica_appunti.pdf" "chimica_appunti" 1760612781.88661 0
+  "/home/franci/Code/chimica/chimica_appunti.tex" 1760612777.60459 51292 0b4ae6cf8abcad5d516d3b07a6b8a6b0 ""
   "/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1755987285 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/share/texmf-dist/fonts/map/fontname/texfonts.map" 1755987285 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texmf-dist/fonts/tfm/jknappen/ec/tcrm1000.tfm" 1755987285 1536 e07581a4bb3136ece9eeb4c3ffab8233 ""
@@ -182,10 +182,10 @@
   "/usr/share/texmf-dist/tex/latex/xcolor/xcolor.sty" 1755987285 55384 b454dec21c2d9f45ec0b793f0995b992 ""
   "/usr/share/texmf-dist/web2c/texmf.cnf" 1755987285 42087 b0f9697c952c8f5a8eede4134282cb0d ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1758727370 5311557 9da84c45f5b388655502706482323571 ""
-  "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1758727333 2008248 a5c76efaa6d853d1a966e093c497eb75 ""
-  "chimica_appunti.aux" 1760443654.06299 5344 ff966d359b7afcd8960b7e0881643631 "pdflatex"
-  "chimica_appunti.out" 1760443654.06399 5548 7ad6df151d8d5e6ecaadfaebfb214c82 "pdflatex"
-  "chimica_appunti.toc" 1760443654.06399 3109 0d32552443ebd80b4ab08ecf8693ba44 "pdflatex"
+  "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1760604123 2061860 ae15206d7b9e5c64f898ac51fa8cf538 ""
+  "chimica_appunti.aux" 1760612781.81601 8429 56bb06965cc3b6432e450dd15339fdd4 "pdflatex"
+  "chimica_appunti.out" 1760612781.81701 9511 13b63ba140c3b990cc93c7d57299a54d "pdflatex"
+  "chimica_appunti.toc" 1760612781.81788 5251 74959a1637f9659c9576614837fd4dea "pdflatex"
   "immagini/Shielding-Effect.jpg" 1759936374.27512 135747 9652db304ed5603df7cd97f101b389b9 ""
   "immagini/indio_ione.png" 1760008858.32703 77074 16738fe145a83771e66e2e20887ddcc4 ""
   "immagini/orbitali.jpg" 1759936239.03012 28714 819c586f65e98a1f0688f6b6d91f7c2a ""
